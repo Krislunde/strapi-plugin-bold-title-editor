@@ -19,7 +19,7 @@ converter.setOption('simpleLineBreaks', true);
 const ContentEditable = styled(ReactContentEditable)`
     flex: 1;
     width: 100%;
-    font-size: ${({ theme }) => theme.fontSizes[3]};
+    font-size: ${({ theme }) => theme.fontSizes[2]};
     line-height: ${({ theme }) => theme.lineHeights[2]};
     border-radius: ${({ theme }) => theme.borderRadius};
     border: 1px solid ${({ theme }) => theme.colors.neutral200};
@@ -110,6 +110,11 @@ const toHtml = (parsed, clear) => {
 
 const getValueToUpdate = (html, markdown, clear) => {
     const parsed = reduceParsed(parse(html));
+
+    if (parsed.every((node) => node.type === 'break')) {
+        return '';
+    }
+
     return markdown ? toMarkdown(parsed, clear) : toHtml(parsed, clear);
 };
 
