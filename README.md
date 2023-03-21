@@ -1,8 +1,12 @@
 # Strapi plugin Bold title editor
 
-A bold title/text editor to accent certain parts
+A bold title/text editor to accentuate **certain parts** through HTML or Markdown.
 
-## Installation
+## ✨ Features
+* **Different output options:** choose between HTML and Markdown.
+* **Actions:** accentuate **certain parts**, preview code output and clear text format.
+
+## ⏳ Installation
 
 ```sh
 # Using Yarn
@@ -22,19 +26,29 @@ yarn build
 npm run build
 ```
 
-## Usage
+## 🎉 Usage
 
 ![bold title editor screenshot](./bold-title-editor.png)
 
-### React/Next.js
+### HTML
+#### React/Next.js
 
 ```tsx
 <h1 dangerouslySetInnerHTML={{ __html: title }} />
 <h3><a href="#" dangerouslySetInnerHTML={{ __html: title }} /></h3>
 ```
 
-### Vue
+#### Vue
 ```html
 <h1 v-html="title" />
 <h3><a href="#" v-html="title" /></h3>
+```
+
+### Markdown
+#### React
+
+```tsx
+import ReactMarkdown from 'react-markdown'
+
+<ReactMarkdown children={title} />
 ```
