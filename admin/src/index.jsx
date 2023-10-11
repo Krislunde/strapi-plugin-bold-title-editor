@@ -1,9 +1,12 @@
+import Bold from "./icons/Bold";
+
 export default {
     register(app) {
         app.customFields.register({
             name: 'title',
             type: 'string',
             pluginId: 'bold-title-editor',
+            icon: Bold,
             intlLabel: {
                 id: 'bold-title-editor.label',
                 defaultMessage: 'Bold title editor'
