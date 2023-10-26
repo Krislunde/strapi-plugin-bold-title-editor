@@ -1,5 +1,5 @@
 {
-  "name": "krislunde/@ef2/strapi-plugin-bold-title-editor",
+  "name": "@krislunde/strapi-plugin-bold-title-editor",
   "version": "1.0.9",
   "description": "A bold title/text editor to accent certain parts",
   "strapi": {
