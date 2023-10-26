@@ -97,7 +97,7 @@ const toHtml = (parsed, clear) => {
         }
 
         if (c.type === 'text' && c.bold && !clear) {
-            return `${a}<b>${c.text}</b>`;
+            return `${a}<span>${c.text}</span>`;
         }
 
         if (c.type === 'text') {
