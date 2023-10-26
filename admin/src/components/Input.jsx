@@ -28,7 +28,7 @@ const ContentEditable = styled(ReactContentEditable)`
     color: ${({ theme }) => theme.colors.neutral800};
     ${inputFocusStyle()}
 
-    b, strong {
+    b, strong, span {
         font-weight: ${({ theme }) => theme.fontWeights.bold};
     }
 `;
