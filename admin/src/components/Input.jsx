@@ -28,7 +28,7 @@ const ContentEditable = styled(ReactContentEditable)`
     color: ${({ theme }) => theme.colors.neutral800};
     ${inputFocusStyle()}
 
-    b, strong, span {
+    b, strong {
         font-weight: ${({ theme }) => theme.fontWeights.bold};
     }
 `;
@@ -60,7 +60,7 @@ const reduceParsed = (html, bold) => {
             return [...a, { type: 'break' }];
         }
 
-        if (c.nodeType === NodeType.ELEMENT_NODE && c.childNodes && (c.tagName === 'B' || c.tagName === 'SPAN' || c.tagName === 'STRONG')) {
+        if (c.nodeType === NodeType.ELEMENT_NODE && c.childNodes && (c.tagName === 'B' || c.tagName === 'STRONG')) {
             return [...a, ...reduceParsed(c, true)];
         }
 
@@ -97,7 +97,7 @@ const toHtml = (parsed, clear) => {
         }
 
         if (c.type === 'text' && c.bold && !clear) {
-            return `${a}<span>${c.text}</span>`;
+            return `${a}<strong>${c.text}</strong>`;
         }
 
         if (c.type === 'text') {
